@@ -14,8 +14,6 @@ export const connectToDB = async () => {
 			name: 'promptorium',
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
-			useCreateIndex: true,
-			useFindAndModify: false,
 		});
 
 		isConnected = true;
