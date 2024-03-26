@@ -7,6 +7,8 @@ import { useRouter } from 'next/navigation';
 import Form from '@components/Form';
 
 const CreatePrompt = () => {
+	const { data: session } = useSession();
+	const router = useRouter();
 	const [submitting, setSubmitting] = useState(false);
 	const [post, setPost] = useState({
 		prompt: '',
@@ -19,7 +21,7 @@ const CreatePrompt = () => {
 		setSubmitting(true);
 
 		try {
-			const response = await fetch('/api/prompt', {
+			const response = await fetch('/api/prompt/new', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -40,8 +42,8 @@ const CreatePrompt = () => {
 			console.log(error);
 			alert('An error occurred. Please try again.');
 		} finally {
-      setSubmitting(false);
-    }
+			setSubmitting(false);
+		}
 	};
 
 	return (
