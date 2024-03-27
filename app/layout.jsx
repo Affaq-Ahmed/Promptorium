@@ -3,7 +3,7 @@ import Provider from '@components/Provider';
 import '@styles/globals.css';
 
 export const metadata = {
-	title: 'Promptorium',
+	title: 'Promptorium - Affaq Ahmed',
 	description:
 		'A collection of prompts to help you get started on your next project',
 };
@@ -15,11 +15,11 @@ const RootLayout = ({ children }) => {
 				<Provider>
 					<div className='main'>
 						<div className='gradient' />
-						<main className='app'>
-							<Nav />
-							{children}
-						</main>
 					</div>
+					<main className='app'>
+						<Nav />
+						{children}
+					</main>
 				</Provider>
 			</body>
 		</html>
