@@ -30,10 +30,21 @@ const MyProfile = () => {
 	};
 
 	const handleDelete = async (post) => {
+		const hasConfirmed = confirm(
+			'Are you sure you want to delete this post?'
+		);
+
+		if (!hasConfirmed) return;
+
 		console.log(post);
-		const response = await fetch(`/api/posts/${post._id}`, {
+		const response = await fetch(`/api/prompt/${post._id.toString()}`, {
 			method: 'DELETE',
 		});
+
+		if (response.ok) {
+			const updatedPosts = posts.filter((p) => p._id !== post._id);
+			setPosts(updatedPosts);
+		}
 	};
 
 	return (
