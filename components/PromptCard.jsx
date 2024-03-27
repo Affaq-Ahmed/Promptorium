@@ -18,7 +18,7 @@ const PromptCard = ({
 
 	const handleCopy = () => {
 		setCopied(prompt.prompt);
-		console.log(prompt.prompt);
+
 		navigator.clipboard.writeText(prompt.prompt);
 		setTimeout(() => setCopied(''), 3000);
 	};
@@ -72,7 +72,7 @@ const PromptCard = ({
 					<div className='mt-5 flex-center gap-5 border-t border-gray-200 pt-3'>
 						<p
 							className='font-inter text-sm green_gradient cursor-pointer'
-							onClick={handleEdit}
+							onClick={() => handleEdit(prompt)}
 						>
 							Edit
 						</p>
