@@ -12,8 +12,6 @@ export const connectToDB = async () => {
 	try {
 		await mongoose.connect(process.env.MONGODB_URI, {
 			name: 'promptorium',
-			useNewUrlParser: true,
-			useUnifiedTopology: true,
 		});
 
 		isConnected = true;
