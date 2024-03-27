@@ -6,6 +6,9 @@ export const metadata = {
 	title: 'Promptorium - Affaq Ahmed',
 	description:
 		'A collection of prompts to help you get started on your next project',
+	icons: {
+		icon: '/assets/images/logo.svg',
+	},
 };
 
 const RootLayout = ({ children }) => {
