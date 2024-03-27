@@ -29,7 +29,12 @@ const MyProfile = () => {
 		router.push(`/update-prompt?id=${post._id}`);
 	};
 
-	const handleDelete = async (post) => {};
+	const handleDelete = async (post) => {
+		console.log(post);
+		const response = await fetch(`/api/posts/${post._id}`, {
+			method: 'DELETE',
+		});
+	};
 
 	return (
 		<Profile
